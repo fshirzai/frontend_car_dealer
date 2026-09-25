@@ -1,7 +1,5 @@
 import { vehiclesApi } from '@/modules/vehicles/api/vehicles.api';
-import { salesApi } from '@/modules/sales/api/sales.api';
 import { ordersApi } from '@/modules/orders/api/orders.api';
-import { purchasesApi } from '@/modules/purchases/api/purchases.api';
 import { expensesApi } from '@/modules/expenses/api/expenses.api';
 import type { ProfitReport } from '@/modules/vehicles/api/vehicles.types';
 

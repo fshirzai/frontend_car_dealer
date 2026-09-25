@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Gauge, Fuel, Cog, Calendar, MapPin } from 'lucide-react';
+import { Gauge, Fuel, Calendar } from 'lucide-react';
 import { Card, CardContent } from '@/shared/components/ui/card';
 import { Badge } from '@/shared/components/ui/badge';
 import { Button } from '@/shared/components/ui/button';

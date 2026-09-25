@@ -350,7 +350,9 @@ function PurchaseDialog({
       ...form,
       notes: form.notes?.trim() || null,
       documentUrl: form.documentUrl?.trim() || null,
-      purchaseDate: new Date(form.purchaseDate).toISOString(),
+      purchaseDate: form.purchaseDate
+  ? new Date(form.purchaseDate).toISOString()
+  : new Date().toISOString(),
     };
 
     if (isEdit && purchase) {

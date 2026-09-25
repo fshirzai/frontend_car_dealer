@@ -220,7 +220,7 @@ export function useAddVehicleImagesBulk(vehicleId: string) {
   });
 }
 
-export function useSetPrimaryImage(vehicleId: string) {
+export function useSetPrimaryImage() {
   const invalidate = useInvalidateAll();
   return useMutation({
     mutationFn: (imageId: string) => vehiclesApi.setPrimaryImage(imageId),
@@ -232,7 +232,7 @@ export function useSetPrimaryImage(vehicleId: string) {
   });
 }
 
-export function useDeleteVehicleImage(vehicleId: string) {
+export function useDeleteVehicleImage() {
   const invalidate = useInvalidateAll();
   return useMutation({
     mutationFn: (imageId: string) => vehiclesApi.deleteImage(imageId),

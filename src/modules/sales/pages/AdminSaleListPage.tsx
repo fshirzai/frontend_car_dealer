@@ -328,7 +328,9 @@ function SaleDialog({
         ...form,
         notes: form.notes?.trim() || null,
         invoiceNumber: form.invoiceNumber?.trim() || null,
-        saleDate: new Date(form.saleDate).toISOString(),
+        saleDate: form.saleDate
+  ? new Date(form.saleDate).toISOString()
+  : new Date().toISOString(),
       },
       { onSuccess: () => onOpenChange(false) }
     );

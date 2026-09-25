@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link,  useParams } from 'react-router-dom';
 import {
   ArrowLeft,
   Phone,
@@ -39,7 +39,7 @@ import {
 
 export function AdminOrderDetailPage() {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
+ 
 
   const { data: order, isLoading, isError } = useStaffOrder(id);
   const updateStatus = useUpdateOrderStatus(id ?? '');

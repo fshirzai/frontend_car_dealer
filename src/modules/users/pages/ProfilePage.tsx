@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -19,7 +19,6 @@ import { Separator } from '@/shared/components/ui/separator';
 import { PageHeader } from '@/shared/components/common/PageHeader';
 import { FullPageSpinner } from '@/shared/components/common/Spinner';
 import { getInitials, formatDate } from '@/shared/lib/utils';
-import { useAuthStore } from '@/modules/auth/store/auth.store';
 import {
   useMe,
   useUpdateMe,

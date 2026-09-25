@@ -38,8 +38,8 @@ export function VehicleImageManager({ vehicleId }: VehicleImageManagerProps) {
   const { data: images = [], isLoading } = useVehicleImages(vehicleId);
   const addImage = useAddVehicleImage(vehicleId);
   const addBulk = useAddVehicleImagesBulk(vehicleId);
-  const setPrimary = useSetPrimaryImage(vehicleId);
-  const deleteImage = useDeleteVehicleImage(vehicleId);
+  const setPrimary = useSetPrimaryImage();
+  const deleteImage = useDeleteVehicleImage();
   const reorder = useReorderVehicleImages(vehicleId);
 
   const [altText, setAltText] = useState('');

@@ -32,7 +32,14 @@ import {
   useStaffVehicle,
   useUpdateVehicle,
 } from '../hooks/useVehicles';
-
+import type {
+  BodyType,
+  DriveType,
+  FuelType,
+  MileageUnit,
+  Transmission,
+  VehicleCondition,
+} from '@/shared/types';
 const schema = z.object({
   vin: z.string().max(30).optional().or(z.literal('')),
   engineNumber: z.string().max(30).optional().or(z.literal('')),
@@ -115,26 +122,41 @@ export function AdminVehicleFormPage() {
 
   if (isEdit && isLoading) return <FullPageSpinner />;
 
-  const onSubmit = (values: FormValues) => {
-    const payload = {
-      ...values,
-      vin: values.vin || null,
-      engineNumber: values.engineNumber || null,
-      trim: values.trim || null,
-      color: values.color || null,
-      description: values.description || null,
-    };
+ 
 
-    if (isEdit && id) {
-      updateMutation.mutate(payload, {
-        onSuccess: () => navigate(`/admin/vehicles/${id}`),
-      });
-    } else {
-      createMutation.mutate(payload, {
-        onSuccess: (v) => navigate(`/admin/vehicles/${v.id}`),
-      });
-    }
+const onSubmit = (values: FormValues) => {
+  const payload = {
+    vin: values.vin || null,
+    engineNumber: values.engineNumber || null,
+    make: values.make,
+    model: values.model,
+    year: values.year,
+    trim: values.trim || null,
+    color: values.color || null,
+    bodyType: values.bodyType as BodyType,
+    fuelType: values.fuelType as FuelType,
+    transmission: values.transmission as Transmission,
+    driveType: values.driveType as DriveType,
+    condition: values.condition as VehicleCondition,
+    mileage: values.mileage,
+    mileageUnit: values.mileageUnit as MileageUnit,
+    description: values.description || null,
+    purchasePrice: values.purchasePrice,
+    askingPrice: values.askingPrice,
+    currency: values.currency,
+    isPublished: values.isPublished,
   };
+
+  if (isEdit && id) {
+    updateMutation.mutate(payload, {
+      onSuccess: () => navigate(`/admin/vehicles/${id}`),
+    });
+  } else {
+    createMutation.mutate(payload, {
+      onSuccess: (v) => navigate(`/admin/vehicles/${v.id}`),
+    });
+  }
+};
 
   const isSubmitting = createMutation.isPending || updateMutation.isPending;
 

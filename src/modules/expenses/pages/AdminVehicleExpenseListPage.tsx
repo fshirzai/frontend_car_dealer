@@ -247,7 +247,9 @@ function VehicleExpenseDialog({
         description: form.description.trim(),
         documentUrl: form.documentUrl?.trim() || null,
         notes: form.notes?.trim() || null,
-        expenseDate: new Date(form.expenseDate).toISOString(),
+        expenseDate: form.expenseDate
+  ? new Date(form.expenseDate).toISOString()
+  : new Date().toISOString(),
       },
       { onSuccess: () => onOpenChange(false) }
     );
