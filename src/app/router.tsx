@@ -42,7 +42,7 @@ import { AdminAuditLogPage } from '@/modules/auditLogs/pages/AdminAuditLogPage';
 import { AdminSettingsPage } from '@/modules/settings/pages/AdminSettingsPage';
 
 import { USER_ROLES } from '@/shared/types';
-import { AboutPage } from '@/modules/dashboard/pages/AboutPage';
+import  { AboutPage } from '@/modules/dashboard/pages/AboutPage';
 import { ContactPage } from '@/modules/dashboard/pages/ContactPage';
 export const router = createBrowserRouter([
   /* -------------------- Auth -------------------- */
