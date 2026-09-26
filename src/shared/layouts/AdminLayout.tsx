@@ -16,6 +16,7 @@ import {
   X,
   Car as CarLogo,
   ArrowLeft,
+  BarChart3,
 } from 'lucide-react';
 import { Button } from '@/shared/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/shared/components/ui/avatar';
@@ -29,7 +30,7 @@ import {
 import { useAuth } from '@/modules/auth/hooks/useAuth';
 import { useAppSettings } from '@/modules/settings/context/SettingsContext';
 import { cn, getInitials } from '@/shared/lib/utils';
-import { BarChart3 } from 'lucide-react';
+
 const navigation = [
   { name: 'Dashboard', href: '/admin', icon: LayoutDashboard, exact: true },
   { name: 'Vehicles', href: '/admin/vehicles', icon: Car },
@@ -71,12 +72,12 @@ export function AdminLayout() {
       {/* Sidebar */}
       <aside
         className={cn(
-          'fixed inset-y-0 left-0 z-50 w-64 transform border-r bg-card transition-transform lg:translate-x-0',
+          'fixed inset-y-0 left-0 z-50 flex w-64 flex-col border-r bg-card transition-transform lg:translate-x-0',
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
         )}
       >
-        {/* Brand */}
-        <div className="flex h-16 items-center justify-between border-b px-4">
+        {/* Brand — fixed at top */}
+        <div className="flex h-16 shrink-0 items-center justify-between border-b px-4">
           <Link to="/admin" className="flex items-center gap-2">
             {logoUrl ? (
               <img
@@ -110,8 +111,8 @@ export function AdminLayout() {
           </Button>
         </div>
 
-        {/* Nav */}
-        <nav className="space-y-1 overflow-y-auto p-3 pb-20">
+        {/* Nav — scrollable middle section */}
+        <nav className="flex-1 space-y-1 overflow-y-auto p-3">
           {visibleNav.map((item) => {
             const Icon = item.icon;
             return (
@@ -136,7 +137,8 @@ export function AdminLayout() {
           })}
         </nav>
 
-        <div className="absolute bottom-0 left-0 right-0 border-t bg-card p-3">
+        {/* Bottom action — fixed at bottom */}
+        <div className="shrink-0 border-t bg-card p-3">
           <Button variant="ghost" className="w-full justify-start" asChild>
             <Link to="/">
               <ArrowLeft className="mr-2 h-4 w-4" />
