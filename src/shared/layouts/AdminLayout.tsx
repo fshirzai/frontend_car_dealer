@@ -29,7 +29,7 @@ import {
 import { useAuth } from '@/modules/auth/hooks/useAuth';
 import { useAppSettings } from '@/modules/settings/context/SettingsContext';
 import { cn, getInitials } from '@/shared/lib/utils';
-
+import { BarChart3 } from 'lucide-react';
 const navigation = [
   { name: 'Dashboard', href: '/admin', icon: LayoutDashboard, exact: true },
   { name: 'Vehicles', href: '/admin/vehicles', icon: Car },
@@ -40,6 +40,7 @@ const navigation = [
   { name: 'General Expenses', href: '/admin/general-expenses', icon: FileText },
   { name: 'Sellers', href: '/admin/sellers', icon: Building2 },
   { name: 'Users', href: '/admin/users', icon: Users },
+  { name: 'Reports', href: '/admin/reports', icon: BarChart3 },
   {
     name: 'Audit Logs',
     href: '/admin/audit-logs',

@@ -44,6 +44,13 @@ import { AdminSettingsPage } from '@/modules/settings/pages/AdminSettingsPage';
 import { USER_ROLES } from '@/shared/types';
 import  { AboutPage } from '@/modules/dashboard/pages/AboutPage';
 import { ContactPage } from '@/modules/dashboard/pages/ContactPage';
+import { ReportsPage } from '@/modules/reports/pages/ReportsPage';
+import { SalesReportPage } from '@/modules/reports/pages/SalesReportPage';
+import { InventoryReportPage } from '@/modules/reports/pages/InventoryReportPage';
+import { ProfitReportPage } from '@/modules/reports/pages/ProfitReportPage';
+import { OrdersReportPage } from '@/modules/reports/pages/OrdersReportPage';
+import { ExpensesReportPage } from '@/modules/reports/pages/ExpensesReportPage';
+import { CustomersReportPage } from '@/modules/reports/pages/CustomersReportPage';
 export const router = createBrowserRouter([
   /* -------------------- Auth -------------------- */
   {
@@ -155,6 +162,13 @@ export const router = createBrowserRouter([
             children: [
               { path: 'audit-logs', element: <AdminAuditLogPage /> },
               { path: 'settings', element: <AdminSettingsPage /> },
+              { path: 'reports', element: <ReportsPage /> },
+{ path: 'reports/sales', element: <SalesReportPage /> },
+{ path: 'reports/inventory', element: <InventoryReportPage /> },
+{ path: 'reports/profit', element: <ProfitReportPage /> },
+{ path: 'reports/orders', element: <OrdersReportPage /> },
+{ path: 'reports/expenses', element: <ExpensesReportPage /> },
+{ path: 'reports/customers', element: <CustomersReportPage /> },
             ],
           },
         ],
