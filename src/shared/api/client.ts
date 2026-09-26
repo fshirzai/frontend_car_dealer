@@ -7,7 +7,7 @@ import { useAuthStore } from '@/modules/auth/store/auth.store';
 import { ENDPOINTS } from './endpoints';
 import type { ApiErrorPayload } from './types';
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://car-dealer-backend-laab.onrender.com/api/v1/';
+const API_URL = import.meta.env.VITE_API_URL || 'https://car-dealer-backend-laab.onrender.com/api/v1';
 
 /* ------------------------------------------------------------------ */
 /* Main API client                                                     */
